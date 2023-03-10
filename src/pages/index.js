@@ -42,7 +42,7 @@ export default function Home() {
                 This demo uses the gpt-3.5-turbo model.
               </p>
               <div className='mt-10 flex items-center justify-center gap-x-6'>
-                <form className='w-96'>
+                <form className='w-96' onSubmit={handleData}>
                   <div>
                     <label
                       htmlFor='prompt'
@@ -61,6 +61,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
+                  <button
+                    type='submit'
+                    className='rounded-md bg-indigo-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500'
+                  >
+                    Button text
+                  </button>
                 </form>
               </div>
             </div>
