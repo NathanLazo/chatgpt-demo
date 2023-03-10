@@ -17,7 +17,7 @@ export default function Home() {
       },
       body: JSON.stringify({ prompt }),
     });
-    const json = res.json();
+    const json = await res.json();
     setResponse(json.message.content);
   };
 
