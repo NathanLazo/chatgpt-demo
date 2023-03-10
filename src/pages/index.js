@@ -17,7 +17,7 @@ export default function Home() {
       },
       body: JSON.stringify({ prompt }),
     });
-    const json = await res.json();
+    const json = res.json();
     setResponse(json.message.content);
   };
 
@@ -41,7 +41,7 @@ export default function Home() {
                 This is a demo of the OpenAI API. You can use it to generate text, images, and more.
                 This demo uses the gpt-3.5-turbo model.
               </p>
-              <div className='mt-10 flex items-center justify-center gap-x-6'>
+              <div className='mt-10 flex flex-col items-center justify-center gap-x-6'>
                 <form className='w-96' onSubmit={handleData}>
                   <div>
                     <label
@@ -61,13 +61,25 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <button
-                    type='submit'
-                    className='rounded-md bg-indigo-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500'
-                  >
-                    Button text
-                  </button>
+                  <div className='mt-4 flex justify-start'>
+                    <button
+                      type='submit'
+                      className='rounded-md bg-indigo-500 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500'
+                    >
+                      Submit prompt
+                    </button>
+                  </div>
                 </form>
+                <div className='w-96'>
+                  <div>
+                    <label
+                      htmlFor='response'
+                      className='block text-sm text-left font-medium leading-6 text-white'
+                    >
+                      Response: {response}
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
